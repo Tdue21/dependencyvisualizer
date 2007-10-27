@@ -85,7 +85,6 @@
     <Content Include="Prerequisites.txt" />
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
-    <None Include="index.html" />
     <None Include="License.rtf">
     </None>
     <None Include="Properties\Settings.settings">
