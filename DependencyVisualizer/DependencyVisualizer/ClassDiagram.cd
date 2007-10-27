@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="DependencyVisualizer.ConfigureDependencyVisualizer">
+    <Position X="0.5" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>ConfigureDependencyVisualizer.cs</FileName>
+      <HashCode>AAgAAAAAAyQAAAEACACAAAACAIAABAAAAAAAAAAAACA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DependencyVisualizer.DependencyGraphVisualizer">
+    <Position X="3.25" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <FileName>DependencyVisualizer.cs</FileName>
+      <HashCode>AAAAAAAAIEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DependencyVisualizer.FileRepository">
+    <Position X="16" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>FileRepository.cs</FileName>
+      <HashCode>AIIAQAAAAAAAAAAAAAAAAAAAAAAAAAAoQAAAAAAAAAg=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DependencyVisualizer.Program">
+    <Position X="5.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Program.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DependencyVisualizer.Project">
+    <Position X="12.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Project.cs</FileName>
+      <HashCode>EBAgAQAAAAABAAIBQIAAEYQEAIgQBQAEAAACAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DependencyVisualizer.ProjectRepository">
+    <Position X="14.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ProjectRepository.cs</FileName>
+      <HashCode>AAIAQAAAAAAAAAAAAAAACAAAAAAAAAAIQAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DependencyVisualizer.ReferenceVertex">
+    <Position X="11.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ReferenceVertex.cs</FileName>
+      <HashCode>EAAAAAAAAAAAAAIAAIAAgAQAAAAAAAAAAAAAAAAIAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DependencyVisualizer.ReferenceVertexProvider" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <FileName>ReferenceVertexProvider.cs</FileName>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAQAEAAAEAAAAABAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DependencyVisualizer.Solution">
+    <Position X="10.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Solution.cs</FileName>
+      <HashCode>AAAAAAAAAAQAAAAAIAAAAAAAAAAAAAAEAAAAAABAASA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DependencyVisualizer.Tracer">
+    <Position X="5.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Tracer.cs</FileName>
+      <HashCode>AAAAAAAAAAAEAYAACAAAABAAAAAAAAAAAAAAAEAAQAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DependencyVisualizer.Properties.Settings">
+    <Position X="7.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAgAAAAAAEQAAAAIAAAAAABAAAAAAAAgAAAAAA=</HashCode>
+    </TypeIdentifier>
+    <Compartments>
+      <Compartment Name="Private" Collapsed="true" />
+    </Compartments>
+  </Class>
+  <Class Name="DependencyVisualizer.UnsupportedFileFormatException">
+    <Position X="8" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>UnsupportedFileFormatException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DependencyVisualizer.DependencyException">
+    <Position X="8" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <FileName>DependencyException.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="DependencyVisualizer.ReferenceType">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>DependencyVisualizer.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DependencyVisualizer.ProjectKind">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Project.cs</FileName>
+      <HashCode>BAAACAAACAAAAAAAAEAAAAAAAAAAABIAAAAgAACAABA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

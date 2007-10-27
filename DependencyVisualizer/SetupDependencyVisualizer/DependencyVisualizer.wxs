@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?include Versions.wxi ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!-- Use star, as we're only interested in major upgrades -->
+  <Product Id="*" 
+           Name="Dependency Visualizer $(var.DependencyVisualizerVersion)" 
+           Language="1033" 
+           Version="$(var.DependencyVisualizerVersion)" 
+           Manufacturer="Simon Dahlbacka" 
+           UpgradeCode="a618bed3-771e-45ad-a441-7910a9b58820">
+    <Package InstallerVersion="200" 
+             Compressed="yes"
+             Description="Visual Studio reference visualizer" 
+             InstallPrivileges="elevated" />
+
+    <WixVariable Id="SourceDir" Value="..\DependencyVisualizer\bin\Release\" />
+    <WixVariable Id="WixUILicenseRtf" Value="..\DependencyVisualizer\License.rtf" />
+
+    <Media Id="1" Cabinet="SetupDependencyVisualizer.cab" EmbedCab="yes" />
+
+    <Condition Message="This setup requires the .NET Framework 2.0 or higher.">
+      Installed OR MsiNetAssemblySupport &gt;= "2.0.50727"
+    </Condition>
+    <Condition Message="An administrator must approve or install [ProductName].">
+      Privileged
+    </Condition>
+    <Condition Message="A later version of [ProductName] is already installed.">
+      NOT NEWERVERSIONDETECTED
+    </Condition>
+
+    <Upgrade Id="a618bed3-771e-45ad-a441-7910a9b58820">
+      <UpgradeVersion Minimum="$(var.DependencyVisualizerVersion)" OnlyDetect="yes" Property="NEWERVERSIONDETECTED" />
+      <UpgradeVersion Minimum="0.9.9" IncludeMinimum="yes" Maximum="$(var.DependencyVisualizerVersion)" IncludeMaximum="no" Property="OLDERVERSIONBEINGUPGRADED" />
+    </Upgrade>
+
+    <Property Id="ARPURLINFOABOUT" Value="http://www.codeplex.com/dependencyvisualizer" />
+    <Property Id="ARPURLUPDATEINFO" Value="http://www.codeplex.com/dependencyvisualizer" />
+    <Property Id="ARPHELPLINK" Value="http://www.codeplex.com/dependencyvisualizer" />
+    <Property Id="ARPPRODUCTICON" Value="DependencyVisualizerIcon.exe" />
+    
+    <Property Id="ALLUSERS">
+      <![CDATA[1]]>
+    </Property>
+    
+    <Icon Id="DependencyVisualizerIcon.exe" SourceFile="!(wix.SourceDir)..\..\DependencyVisualizerIcons.exe"/>
+
+    <Feature Id="ProductFeature" Title="Binaries" Level="1">      
+      <ComponentGroupRef Id="CG.DependencyVisualizer" />
+      <ComponentGroupRef Id="CG.NGraphviz"/>
+      <ComponentGroupRef Id="CG.Quickgraph"/>
+    </Feature>
+
+    <!-- Install Sequences -->
+    <InstallExecuteSequence>
+      <FindRelatedProducts Before="LaunchConditions" />
+      <RemoveExistingProducts After="InstallValidate" />
+    </InstallExecuteSequence>
+
+    <InstallUISequence>
+      <FindRelatedProducts Before="LaunchConditions" />
+    </InstallUISequence>
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
+    <UIRef Id="WixUI_ErrorProgressText" />
+    <UIRef Id="WixUI_InstallDir"/>    
+  </Product>
+</Wix>

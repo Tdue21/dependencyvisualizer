@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+  <Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+
+      <Component Id="C.DependencyVisualizerLicense"
+                 Guid="{54B64031-BD9B-4442-813C-89A8B5BE6490}">
+        <File Id="Licence.rtf"
+              Name="Licence.rtf"
+              Source="!(wix.WixUILicenseRtf)"/>
+      </Component>
+      <Component Id="C.DependencyVisualizerConfig" Guid="7F98CE8E-D2B9-4470-A585-46304AB5C9A0">
+        <File Id="DependencyVisualizer.exe.config"
+              Name="DependencyVisualizer.exe.config"
+              Source="!(wix.SourceDir)DependencyVisualizer.exe.config"/>
+        <util:XmlConfig Id="AppConfigAdd"
+                File="[#DependencyVisualizer.exe.config]"
+                Action="create"
+                ElementPath="/configuration/system.diagnostics/trace/listeners"
+                Name="add"
+                Node="element"
+                Sequence="1"
+                On="install" />
+
+        <util:XmlConfig Id="AppConfigName"
+                        File="[#DependencyVisualizer.exe.config]"
+                        ElementPath="AppConfigAdd"
+                        Name="name"
+                        Value="traceListener"
+                        Sequence="2"/>
+        <util:XmlConfig Id="AppConfigType"
+                        File="[#DependencyVisualizer.exe.config]"
+                        ElementPath="AppConfigAdd"
+                        Name="type"
+                        Value="System.Diagostics.TextWriterTraceListener"
+                        Sequence="3" />
+
+        <util:XmlConfig Id="AppConfigInitializeData"
+                        File="[#DependencyVisualizer.exe.config]"
+                        ElementPath="AppConfigAdd"
+                        Name="initializeData"
+                        Value="[%TEMP]/DependencyVisualizerTrace.log"
+                        Sequence="4" />
+      </Component>
+      <Component Id="C.DependencyVisualizer"
+                 Guid="895188E0-8543-4EC7-9104-6B786F2E5FF3">
+        <RemoveFolder Id="ShortcutFolderRemoval"
+                      On="uninstall"
+                      Directory="D.DependencyVisualizerMenu"/>
+        <File Id="DependencyVisualizer.exe"
+              Name="DependencyVisualizer.exe"
+              Source="!(wix.SourceDir)DependencyVisualizer.exe"
+              KeyPath="yes">
+          <Shortcut Id="DependencyVisualizerConfigurationShortcut"
+                    Icon="DependencyVisualizerIcon.exe"
+                    Arguments="/configure"
+                    Show="normal"
+                    Name="Dependency Visualizer configuration ..."
+                    Advertise="yes"
+                    Directory="D.DependencyVisualizerMenu"/>
+        </File>
+        <!-- .sln -->
+        <RegistryKey Action="createAndRemoveOnUninstall"
+                     Root="HKCR"
+                     Key="VisualStudio.Launcher.sln\Shell\Visualize">
+          <RegistryValue Action="write"
+                         Value="Visualize Dependencies" Type="string" />
+          <RegistryKey Action="createAndRemoveOnUninstall" Key="Command">
+            <RegistryValue Action="write" Type="string"
+                           Value="&quot;[#DependencyVisualizer.exe]&quot; &quot;%1&quot;"/>
+          </RegistryKey>
+        </RegistryKey>
+
+        <!-- .csproj -->
+        <RegistryKey Action="createAndRemoveOnUninstall"
+                     Root="HKCR"
+                     Key="VisualStudio.csproj.8.0\Shell\Visualize">
+          <RegistryValue Action="write"
+                         Value="Visualize Dependencies" Type="string" />
+          <RegistryKey Action="createAndRemoveOnUninstall" Key="Command">
+            <RegistryValue Action="write" Type="string"
+                           Value="&quot;[#DependencyVisualizer.exe]&quot; &quot;%1&quot;"/>
+          </RegistryKey>
+        </RegistryKey>
+
+        <!-- .vbproj -->
+        <RegistryKey Action="createAndRemoveOnUninstall" Root="HKCR"
+                     Key="VisualStudio.vbproj.8.0\Shell\Visualize">
+          <RegistryValue Action="write"
+                         Value="Visualize Dependencies" Type="string" />
+          <RegistryKey Action="createAndRemoveOnUninstall" Key="Command">
+            <RegistryValue Action="write" Type="string"
+                           Value="&quot;[#DependencyVisualizer.exe]&quot; &quot;%1&quot;"/>
+          </RegistryKey>
+        </RegistryKey>
+
+        <!--
+                This is how it should be done, if it would have worked..
+                
+                RobMen @ 13.2 -07:
+                You probably can’t use the standard WiX elements because 
+                those will cause your Component to take ownership of the .sln extension 
+                (as you note, not something you want to do).  Instead, you’ll 
+                probably have to write a number of targeted registry keys.
+
+              <Extension ContentType="text\plain" Id="sln">
+                <Verb Id="Visualize" Command="Visualize dependencies" 
+                      TargetFile="DependencyVisualizerExe" 
+                      Argument='"%1"'/>
+              </Extension>
+              -->
+      </Component>
+    </DirectoryRef>
+    <ComponentGroup Id="CG.DependencyVisualizer">
+      <ComponentRef Id="C.DependencyVisualizer"/>
+      <ComponentRef Id="C.DependencyVisualizerConfig"/>
+      <ComponentRef Id="C.DependencyVisualizerLicense"/>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

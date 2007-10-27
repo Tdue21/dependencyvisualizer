@@ -1,0 +1,7 @@
+This project is built using Visual Studio 2005 Team Suite but AFAIK any version of Visual Studio 2005 will do to build
+the actual Dependency Visualizer application.
+
+- The NGraphwiz.* and Quickgraph.* assemblies come from the MbUnit project (www.mbunit.com), currently using version 2.3. 
+- To build the setup you need a recent version of Wix 3 (wix.sf.net)
+
+/Simon 27.10 2007
