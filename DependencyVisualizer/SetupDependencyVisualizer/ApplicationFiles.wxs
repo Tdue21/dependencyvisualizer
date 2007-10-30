@@ -13,7 +13,7 @@
       <Component Id="C.DependencyVisualizerConfig" Guid="7F98CE8E-D2B9-4470-A585-46304AB5C9A0">
         <File Id="DependencyVisualizer.exe.config"
               Name="DependencyVisualizer.exe.config"
-              Source="!(wix.SourceDir)DependencyVisualizer.exe.config"/>
+              Source="$(var.DependencyVisualizer.TargetPath).config"/>
         <util:XmlConfig Id="AppConfigAdd"
                 File="[#DependencyVisualizer.exe.config]"
                 Action="create"
@@ -33,7 +33,7 @@
                         File="[#DependencyVisualizer.exe.config]"
                         ElementPath="AppConfigAdd"
                         Name="type"
-                        Value="System.Diagostics.TextWriterTraceListener"
+                        Value="System.Diagnostics.TextWriterTraceListener"
                         Sequence="3" />
 
         <util:XmlConfig Id="AppConfigInitializeData"
@@ -50,7 +50,7 @@
                       Directory="D.DependencyVisualizerMenu"/>
         <File Id="DependencyVisualizer.exe"
               Name="DependencyVisualizer.exe"
-              Source="!(wix.SourceDir)DependencyVisualizer.exe"
+              Source="$(var.DependencyVisualizer.TargetPath)"
               KeyPath="yes">
           <Shortcut Id="DependencyVisualizerConfigurationShortcut"
                     Icon="DependencyVisualizerIcon.exe"

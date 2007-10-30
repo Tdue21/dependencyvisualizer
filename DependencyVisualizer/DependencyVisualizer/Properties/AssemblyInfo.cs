@@ -32,7 +32,7 @@ using System.Security.Permissions;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.2.4.0")]
+[assembly: AssemblyVersion("1.2.5.0")]
 
 [assembly: ReflectionPermission(SecurityAction.RequestMinimum, Flags=ReflectionPermissionFlag.NoFlags)]
 [assembly: FileIOPermission(SecurityAction.RequestMinimum, AllLocalFiles=FileIOPermissionAccess.Read)]

@@ -70,7 +70,31 @@
     <WixExtension Include="C:\Program Files\Windows Installer XML v3\bin\WixUIExtension.dll">
       <Private>False</Private>
     </WixExtension>
-    <WixExtension Include="C:\Program Files\Windows Installer XML v3\bin\WixUtilExtension.dll" />
+    <WixExtension Include="C:\Program Files\Windows Installer XML v3\bin\WixUtilExtension.dll">
+      <Private>False</Private>
+    </WixExtension>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WiX\v3.0\Wix.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+  <ItemGroup>
+    <ZipFiles Include="$(SolutionDir)\*.sln"/>
+    <ZipFiles Include="$(SolutionDir)\**\*.txt" Exclude="$(SolutionDir)\**\.svn\*.txt;$(SolutionDir)\**\*.FileList.txt"/>
+    <ZipFiles Include="$(SolutionDir)\**\*.*proj"/>
+    <ZipFiles Include="$(SolutionDir)\**\*.cs"/>
+    <ZipFiles Include="$(SolutionDir)\**\*.rtf"/>
+    <ZipFiles Include="$(SolutionDir)\**\*.ico"/>
+    <ZipFiles Include="$(SolutionDir)\**\app.config"/>
+    <ZipFiles Include="$(SolutionDir)\**\*.cd"/>
+    <ZipFiles Include="$(SolutionDir)\**\*.settings"/>
+    <ZipFiles Include="$(SolutionDir)\**\*.resx"/>
+    <ZipFiles Include="$(SolutionDir)\**\*.wxs"/>
+    <ZipFiles Include="$(SolutionDir)\**\*.wxi"/>
+  </ItemGroup>
+  <Target Name="AfterBuild">
+    <Message Text="Zipping all source files, solution dir $(SolutionDir)" Importance="high"/>
+    <Zip Comment="Dependency visualizer source files"
+         Files="@(ZipFiles)"
+         ZipFileName="$(OutDir)\DependencyVisualizerSources.zip" 
+         WorkingDirectory="$(SolutionDir)"/>
+  </Target>
 </Project>

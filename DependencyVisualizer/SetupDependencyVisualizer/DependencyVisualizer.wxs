@@ -13,8 +13,7 @@
              Compressed="yes"
              Description="Visual Studio reference visualizer" 
              InstallPrivileges="elevated" />
-
-    <WixVariable Id="SourceDir" Value="..\DependencyVisualizer\bin\Release\" />
+    
     <WixVariable Id="WixUILicenseRtf" Value="..\DependencyVisualizer\License.rtf" />
 
     <Media Id="1" Cabinet="SetupDependencyVisualizer.cab" EmbedCab="yes" />
@@ -43,7 +42,7 @@
       <![CDATA[1]]>
     </Property>
     
-    <Icon Id="DependencyVisualizerIcon.exe" SourceFile="!(wix.SourceDir)..\..\DependencyVisualizerIcons.exe"/>
+    <Icon Id="DependencyVisualizerIcon.exe" SourceFile="$(var.DependencyVisualizer.ProjectDir)DependencyVisualizerIcons.exe"/>
 
     <Feature Id="ProductFeature" Title="Binaries" Level="1">      
       <ComponentGroupRef Id="CG.DependencyVisualizer" />

@@ -7,31 +7,31 @@
                  Guid="{36C40C51-15C2-4A64-8E33-F724CC977928}">
         <File Id="NGraphviz.dll"
               Name="NGraphviz.dll"
-              Source="!(wix.SourceDir)NGraphviz.dll"/>
+              Source="$(var.DependencyVisualizer.TargetDir)NGraphviz.dll"/>
       </Component>
       <Component Id="C.NGraphvizHelpers"
                  Guid="{E7E1EF04-296B-4A84-9382-3DA9202B7735}">
         <File Id="NGraphvizHelpersDll"
               Name="NGraphviz.Helpers.dll"
-              Source="!(wix.SourceDir)NGraphviz.Helpers.dll"/>
+              Source="$(var.DependencyVisualizer.TargetDir)NGraphviz.Helpers.dll"/>
       </Component>
       <Component Id="C.Quickgraph"
                  Guid="{A49E0A02-908F-4C8A-A014-429E52810004}">
         <File Name="Quickgraph.dll"
               Id="QuickgraphDll"
-              Source="!(wix.SourceDir)Quickgraph.dll"/>
+              Source="$(var.DependencyVisualizer.TargetDir)Quickgraph.dll"/>
       </Component>
       <Component Id="C.QuickgraphAlgorithms"
                  Guid="{0DD273C2-1C12-4A48-B6E4-1BEACD2BAAFC}">
         <File Name="Quickgraph.Algorithms.dll"
               Id="QuickgraphAlgorithmsDll"
-              Source="!(wix.SourceDir)Quickgraph.Algorithms.dll"/>
+              Source="$(var.DependencyVisualizer.TargetDir)Quickgraph.Algorithms.dll"/>
       </Component>
       <Component Id="C.QuickgraphAlgorithmsGraphviz"
                  Guid="{FF18241D-C5F6-4E2E-8E18-38A924DC6F4E}">
         <File Name="Quickgraph.Algorithms.Graphviz.dll"
               Id="QuickgraphAlgorithmsGraphvizDll"
-              Source="!(wix.SourceDir)Quickgraph.Algorithms.Graphviz.dll"/>
+              Source="$(var.DependencyVisualizer.TargetDir)Quickgraph.Algorithms.Graphviz.dll"/>
       </Component>
     </DirectoryRef>
     <ComponentGroup Id="CG.NGraphviz">
