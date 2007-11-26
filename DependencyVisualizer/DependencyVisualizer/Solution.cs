@@ -73,7 +73,8 @@ namespace DependencyVisualizer {
             Solution solution = new Solution();
             solution.FileName = filename;
             string contents = File.ReadAllText(filename);
-            if (!contents.Contains("Microsoft Visual Studio Solution File, Format Version 9")) {
+            if (!contents.Contains("Microsoft Visual Studio Solution File, Format Version 9") &&
+                !contents.Contains("Microsoft Visual Studio Solution File, Format Version 10")) {
                 throw new UnsupportedFileFormatException(string.Format(CultureInfo.CurrentCulture, Resources.BadSolutionFormat, filename));
             }
             Regex re = new Regex(@"Project\(""(?<ProjectType>{[\w-]+})""\)\s+=\s+""(?<Name>[\w\.]+?)"",\s+""(?<Path>[\w\.\\:]+?)"",\s+""(?<ProjectGuid>{[\w-]+})"".*?EndProject\b", RegexOptions.Singleline);

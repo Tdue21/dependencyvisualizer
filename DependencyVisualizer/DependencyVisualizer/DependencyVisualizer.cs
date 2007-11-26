@@ -148,6 +148,10 @@ namespace DependencyVisualizer {
                 if (Settings.Default.HideNet3Assemblies && FileRepository.IsNet30(file)) {
                     continue;
                 }
+                if (Settings.Default.HideNet35Assemblies && FileRepository.IsNet35(file))
+                {
+                    continue;
+                }
                 if (FileRepository.Instance.GetByName(file) == null) {
                     Tracer.Debug("Adding file reference {0} to graph ...", file);
                 }

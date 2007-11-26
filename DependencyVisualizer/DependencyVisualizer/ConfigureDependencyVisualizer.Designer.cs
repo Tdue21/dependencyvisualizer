@@ -34,14 +34,16 @@ namespace DependencyVisualizer
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfigureDependencyVisualizer));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbHideNet2 = new System.Windows.Forms.CheckBox();
-            this.cbHideNet3 = new System.Windows.Forms.CheckBox();
-            this.cbGeneratePng = new System.Windows.Forms.CheckBox();
-            this.cbGenerateSvg = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.cbHideNet2 = new System.Windows.Forms.CheckBox();
+            this.cbHideNet3 = new System.Windows.Forms.CheckBox();
+            this.cbGenerateSvg = new System.Windows.Forms.CheckBox();
+            this.cbGeneratePng = new System.Windows.Forms.CheckBox();
+            this.cbHideNet35 = new System.Windows.Forms.CheckBox();
+            this.cbCombineFrameworkAssemblies = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -51,50 +53,12 @@ namespace DependencyVisualizer
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
             this.tableLayoutPanel1.Controls.Add(this.cbHideNet2, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.cbHideNet3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cbGeneratePng, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.cbGenerateSvg, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.cbGenerateSvg, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.cbGeneratePng, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.cbHideNet35, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cbCombineFrameworkAssemblies, 0, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            // 
-            // cbHideNet2
-            // 
-            resources.ApplyResources(this.cbHideNet2, "cbHideNet2");
-            this.cbHideNet2.Checked = global::DependencyVisualizer.Properties.Settings.Default.HideNet2Assemblies;
-            this.cbHideNet2.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbHideNet2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DependencyVisualizer.Properties.Settings.Default, "HideNet2Assemblies", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cbHideNet2.Name = "cbHideNet2";
-            this.toolTip.SetToolTip(this.cbHideNet2, resources.GetString("cbHideNet2.ToolTip"));
-            this.cbHideNet2.UseVisualStyleBackColor = true;
-            // 
-            // cbHideNet3
-            // 
-            resources.ApplyResources(this.cbHideNet3, "cbHideNet3");
-            this.cbHideNet3.Checked = global::DependencyVisualizer.Properties.Settings.Default.HideNet3Assemblies;
-            this.cbHideNet3.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbHideNet3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DependencyVisualizer.Properties.Settings.Default, "HideNet3Assemblies", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cbHideNet3.Name = "cbHideNet3";
-            this.toolTip.SetToolTip(this.cbHideNet3, resources.GetString("cbHideNet3.ToolTip"));
-            this.cbHideNet3.UseVisualStyleBackColor = true;
-            // 
-            // cbGeneratePng
-            // 
-            resources.ApplyResources(this.cbGeneratePng, "cbGeneratePng");
-            this.cbGeneratePng.Checked = global::DependencyVisualizer.Properties.Settings.Default.GeneratePng;
-            this.cbGeneratePng.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbGeneratePng.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DependencyVisualizer.Properties.Settings.Default, "GeneratePng", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cbGeneratePng.Name = "cbGeneratePng";
-            this.toolTip.SetToolTip(this.cbGeneratePng, resources.GetString("cbGeneratePng.ToolTip"));
-            this.cbGeneratePng.UseVisualStyleBackColor = true;
-            // 
-            // cbGenerateSvg
-            // 
-            resources.ApplyResources(this.cbGenerateSvg, "cbGenerateSvg");
-            this.cbGenerateSvg.Checked = global::DependencyVisualizer.Properties.Settings.Default.GenerateSvg;
-            this.cbGenerateSvg.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbGenerateSvg.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DependencyVisualizer.Properties.Settings.Default, "GenerateSvg", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.cbGenerateSvg.Name = "cbGenerateSvg";
-            this.toolTip.SetToolTip(this.cbGenerateSvg, resources.GetString("cbGenerateSvg.ToolTip"));
-            this.cbGenerateSvg.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -117,6 +81,66 @@ namespace DependencyVisualizer
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
+            // cbHideNet2
+            // 
+            resources.ApplyResources(this.cbHideNet2, "cbHideNet2");
+            this.cbHideNet2.Checked = global::DependencyVisualizer.Properties.Settings.Default.HideNet2Assemblies;
+            this.cbHideNet2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbHideNet2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DependencyVisualizer.Properties.Settings.Default, "HideNet2Assemblies", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbHideNet2.Name = "cbHideNet2";
+            this.toolTip.SetToolTip(this.cbHideNet2, resources.GetString("cbHideNet2.ToolTip"));
+            this.cbHideNet2.UseVisualStyleBackColor = true;
+            // 
+            // cbHideNet3
+            // 
+            resources.ApplyResources(this.cbHideNet3, "cbHideNet3");
+            this.cbHideNet3.Checked = global::DependencyVisualizer.Properties.Settings.Default.HideNet3Assemblies;
+            this.cbHideNet3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbHideNet3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DependencyVisualizer.Properties.Settings.Default, "HideNet3Assemblies", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbHideNet3.Name = "cbHideNet3";
+            this.toolTip.SetToolTip(this.cbHideNet3, resources.GetString("cbHideNet3.ToolTip"));
+            this.cbHideNet3.UseVisualStyleBackColor = true;
+            // 
+            // cbGenerateSvg
+            // 
+            resources.ApplyResources(this.cbGenerateSvg, "cbGenerateSvg");
+            this.cbGenerateSvg.Checked = global::DependencyVisualizer.Properties.Settings.Default.GenerateSvg;
+            this.cbGenerateSvg.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbGenerateSvg.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DependencyVisualizer.Properties.Settings.Default, "GenerateSvg", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbGenerateSvg.Name = "cbGenerateSvg";
+            this.toolTip.SetToolTip(this.cbGenerateSvg, resources.GetString("cbGenerateSvg.ToolTip"));
+            this.cbGenerateSvg.UseVisualStyleBackColor = true;
+            // 
+            // cbGeneratePng
+            // 
+            resources.ApplyResources(this.cbGeneratePng, "cbGeneratePng");
+            this.cbGeneratePng.Checked = global::DependencyVisualizer.Properties.Settings.Default.GeneratePng;
+            this.cbGeneratePng.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbGeneratePng.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DependencyVisualizer.Properties.Settings.Default, "GeneratePng", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbGeneratePng.Name = "cbGeneratePng";
+            this.toolTip.SetToolTip(this.cbGeneratePng, resources.GetString("cbGeneratePng.ToolTip"));
+            this.cbGeneratePng.UseVisualStyleBackColor = true;
+            // 
+            // cbHideNet35
+            // 
+            resources.ApplyResources(this.cbHideNet35, "cbHideNet35");
+            this.cbHideNet35.Checked = global::DependencyVisualizer.Properties.Settings.Default.HideNet35Assemblies;
+            this.cbHideNet35.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbHideNet35.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DependencyVisualizer.Properties.Settings.Default, "HideNet35Assemblies", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbHideNet35.Name = "cbHideNet35";
+            this.toolTip.SetToolTip(this.cbHideNet35, resources.GetString("cbHideNet35.ToolTip"));
+            this.cbHideNet35.UseVisualStyleBackColor = true;
+            // 
+            // cbCombineFrameworkAssemblies
+            // 
+            resources.ApplyResources(this.cbCombineFrameworkAssemblies, "cbCombineFrameworkAssemblies");
+            this.cbCombineFrameworkAssemblies.Checked = global::DependencyVisualizer.Properties.Settings.Default.CombineFrameworkAssemblies;
+            this.cbCombineFrameworkAssemblies.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbCombineFrameworkAssemblies.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::DependencyVisualizer.Properties.Settings.Default, "CombineFrameworkAssemblies", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.cbCombineFrameworkAssemblies.Name = "cbCombineFrameworkAssemblies";
+            this.toolTip.SetToolTip(this.cbCombineFrameworkAssemblies, resources.GetString("cbCombineFrameworkAssemblies.ToolTip"));
+            this.cbCombineFrameworkAssemblies.UseVisualStyleBackColor = true;
+            // 
             // ConfigureDependencyVisualizer
             // 
             resources.ApplyResources(this, "$this");
@@ -137,10 +161,12 @@ namespace DependencyVisualizer
         private System.Windows.Forms.CheckBox cbHideNet2;
         private System.Windows.Forms.CheckBox cbHideNet3;
         private System.Windows.Forms.CheckBox cbGeneratePng;
-        private System.Windows.Forms.CheckBox cbGenerateSvg;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.CheckBox cbGenerateSvg;
+        private System.Windows.Forms.CheckBox cbHideNet35;
+        private System.Windows.Forms.CheckBox cbCombineFrameworkAssemblies;
     }
 }
