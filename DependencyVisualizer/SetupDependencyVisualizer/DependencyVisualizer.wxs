@@ -48,6 +48,7 @@
       <ComponentGroupRef Id="CG.DependencyVisualizer" />
       <ComponentGroupRef Id="CG.NGraphviz"/>
       <ComponentGroupRef Id="CG.Quickgraph"/>
+      <ComponentGroupRef Id="CG.MSVCRuntime"/>
     </Feature>
 
     <!-- Install Sequences -->

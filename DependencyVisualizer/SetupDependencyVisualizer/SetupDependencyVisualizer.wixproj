@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="ApplicationFiles.wxs" />
     <Compile Include="DependencyVisualizer.wxs" />
+    <Compile Include="MSVCRuntime.wxs" />
     <Compile Include="QuickGraph.wxs" />
     <Compile Include="Structure.wxs" />
   </ItemGroup>
@@ -75,26 +76,23 @@
     </WixExtension>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WiX\v3.0\Wix.targets" />
-  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets"/>
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
   <ItemGroup>
-    <ZipFiles Include="$(SolutionDir)\*.sln"/>
-    <ZipFiles Include="$(SolutionDir)\**\*.txt" Exclude="$(SolutionDir)\**\.svn\*.txt;$(SolutionDir)\**\*.FileList.txt"/>
-    <ZipFiles Include="$(SolutionDir)\**\*.*proj"/>
-    <ZipFiles Include="$(SolutionDir)\**\*.cs"/>
-    <ZipFiles Include="$(SolutionDir)\**\*.rtf"/>
-    <ZipFiles Include="$(SolutionDir)\**\*.ico"/>
-    <ZipFiles Include="$(SolutionDir)\**\app.config"/>
-    <ZipFiles Include="$(SolutionDir)\**\*.cd"/>
-    <ZipFiles Include="$(SolutionDir)\**\*.settings"/>
-    <ZipFiles Include="$(SolutionDir)\**\*.resx"/>
-    <ZipFiles Include="$(SolutionDir)\**\*.wxs"/>
-    <ZipFiles Include="$(SolutionDir)\**\*.wxi"/>
+    <ZipFiles Include="$(SolutionDir)\*.sln" />
+    <ZipFiles Include="$(SolutionDir)\**\*.txt" Exclude="$(SolutionDir)\**\.svn\*.txt;$(SolutionDir)\**\*.FileList.txt" />
+    <ZipFiles Include="$(SolutionDir)\**\*.*proj" />
+    <ZipFiles Include="$(SolutionDir)\**\*.cs" />
+    <ZipFiles Include="$(SolutionDir)\**\*.rtf" />
+    <ZipFiles Include="$(SolutionDir)\**\*.ico" />
+    <ZipFiles Include="$(SolutionDir)\**\app.config" />
+    <ZipFiles Include="$(SolutionDir)\**\*.cd" />
+    <ZipFiles Include="$(SolutionDir)\**\*.settings" />
+    <ZipFiles Include="$(SolutionDir)\**\*.resx" />
+    <ZipFiles Include="$(SolutionDir)\**\*.wxs" />
+    <ZipFiles Include="$(SolutionDir)\**\*.wxi" />
   </ItemGroup>
   <Target Name="AfterBuild">
-    <Message Text="Zipping all source files, solution dir $(SolutionDir)" Importance="high"/>
-    <Zip Comment="Dependency visualizer source files"
-         Files="@(ZipFiles)"
-         ZipFileName="$(OutDir)\DependencyVisualizerSources.zip" 
-         WorkingDirectory="$(SolutionDir)"/>
+    <Message Text="Zipping all source files, solution dir $(SolutionDir)" Importance="high" />
+    <Zip Comment="Dependency visualizer source files" Files="@(ZipFiles)" ZipFileName="$(OutDir)\DependencyVisualizerSources.zip" WorkingDirectory="$(SolutionDir)" />
   </Target>
 </Project>

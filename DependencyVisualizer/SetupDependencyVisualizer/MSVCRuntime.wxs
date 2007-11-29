@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <DirectoryRef Id="INSTALLLOCATION">
+      <Component Id="C.msvcr71" Guid="{62FD0BB1-681E-4d00-97BE-235737397667}">
+        <File Id="msvcr71.dll" Name="msvcr71.dll" Source="$(var.SolutionDir)\SetupDependencyVisualizer\msvcr71.dll"/>
+      </Component>
+      <Component Id="C.msvcp71" Guid="{438093DD-A1EB-4437-A12E-BC6297913C9A}">
+        <File Id="msvcp71.dll" Name="msvcp71.dll" Source="$(var.SolutionDir)\SetupDependencyVisualizer\msvcp71.dll"/>
+      </Component>
+    </DirectoryRef>
+    <ComponentGroup Id="CG.MSVCRuntime">
+      <ComponentRef Id="C.msvcr71"/>
+      <ComponentRef Id="C.msvcp71"/>
+    </ComponentGroup>
+	</Fragment>
+</Wix>
