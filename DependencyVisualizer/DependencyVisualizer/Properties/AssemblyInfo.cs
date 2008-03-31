@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
+using System.Resources;
 
 
 // General Information about an assembly is controlled through the following 
@@ -13,7 +14,7 @@ using System.Security.Permissions;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Simon Dahlbacka")]
 [assembly: AssemblyProduct("DependencyVisualizer")]
-[assembly: AssemblyCopyright("Copyright © 2007 Simon Dahlbacka")]
+[assembly: AssemblyCopyright("Copyright © 2007-2008 Simon Dahlbacka")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,8 +33,9 @@ using System.Security.Permissions;
 //      Build Number
 //      Revision
 //
-[assembly: AssemblyVersion("1.2.7.0")]
+[assembly: AssemblyVersion("1.2.8.0")]
 
 [assembly: ReflectionPermission(SecurityAction.RequestMinimum, Flags=ReflectionPermissionFlag.NoFlags)]
 [assembly: FileIOPermission(SecurityAction.RequestMinimum, AllLocalFiles=FileIOPermissionAccess.Read)]
 [assembly: CLSCompliant(true)]
+[assembly: NeutralResourcesLanguage("en-US")]

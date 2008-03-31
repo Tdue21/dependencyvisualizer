@@ -4,7 +4,7 @@
 //
 // Actual graphing stuff
 //
-// Multiline_description
+// Copyright © 2007-2008 Simon Dahlbacka  
 //
 // Created: 13.2 2007 Simon Dahlbacka
 // $Id: $

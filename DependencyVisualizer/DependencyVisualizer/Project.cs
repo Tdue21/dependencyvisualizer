@@ -23,6 +23,8 @@ using System.Xml;
 using QuickGraph.Concepts;
 using System.Reflection;
 using DependencyVisualizer.Properties;
+using System.Web;
+using System.Text.RegularExpressions;
 
 
 
@@ -80,7 +82,13 @@ namespace DependencyVisualizer {
                     Tracer.Debug("Found already parsed project reference {0}", p.Name);
                     m_projectReferences.Add(p);
                 } else {
-                    p = Project.FromFile(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(m_path), el.SelectSingleNode("@Include", ns).Value), m_solution);
+                    string projectPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(m_path), el.SelectSingleNode("@Include", ns).Value);
+                    string urldecoded = DecodePath(projectPath);
+                    if (!System.IO.File.Exists(projectPath) && System.IO.File.Exists(urldecoded)) {
+                        // for some reason Visual Studio seem to urlencode some paths 
+                        projectPath = urldecoded;
+                    }
+                    p = Project.FromFile(projectPath, m_solution);
                     Tracer.Debug("Found new project reference {0}", p.Name);
                     p.Parse();
                     m_projectReferences.Add(p);
@@ -199,6 +207,15 @@ namespace DependencyVisualizer {
         }
 
 
+        private static string DecodePath(string path) {
+            string decoded = Regex.Replace(path, @"%([A-Fa-f\d]{2})", match =>
+            {
+                return ((char)Convert.ToInt32(match.Groups[1].Value, 16)).ToString();
+            });
+
+            return decoded;
+        }
+
         /// <summary>
         /// Create a project from file
         /// </summary>
@@ -209,6 +226,12 @@ namespace DependencyVisualizer {
             if (System.IO.Path.GetExtension(projectPath).Equals(".vcproj", StringComparison.CurrentCultureIgnoreCase)) {
                 return FromVCProjFile(projectPath, solution);
             }
+            string urldecoded = DecodePath(projectPath);
+            if (!System.IO.File.Exists(projectPath) && System.IO.File.Exists(urldecoded)) {
+                // for some reason Visual Studio seem to urlencode some paths 
+                projectPath = urldecoded;
+            }
+
             Tracer.Debug("Pre-parsing {0} ...", projectPath);
             Project project = new Project(solution);
 

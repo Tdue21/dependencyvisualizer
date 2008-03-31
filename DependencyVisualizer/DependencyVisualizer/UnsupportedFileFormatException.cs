@@ -4,7 +4,7 @@
 //
 // Unsupported file format exception
 //
-// Copyright © 2007 Simon Dahlbacka
+// Copyright © 2007-2008 Simon Dahlbacka
 //
 // Created: 27.3 2007 Simon Dahlbacka
 // $Id: $

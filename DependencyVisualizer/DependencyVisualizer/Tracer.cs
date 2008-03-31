@@ -4,7 +4,7 @@
 //
 // Tracing utility class
 //
-// Copyright © 2007 Simon Dahlbacka
+// Copyright © 2007-2008 Simon Dahlbacka
 //
 // Created: 29.3 2007 Simon Dahlbacka
 // $Id: $

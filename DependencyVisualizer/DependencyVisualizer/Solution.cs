@@ -4,9 +4,9 @@
 //
 // Solution class
 //
-// Represents and parses Visual Studio 2005 files
+// Represents and parses Visual Studio 2005 and Visual Studio 2008 solution files
 //
-// Copyright © 2007 Simon Dahlbacka
+// Copyright © 2007-2008 Simon Dahlbacka
 //
 // Created: 13.2 2007 Simon Dahlbacka
 // $Id: $
@@ -77,7 +77,7 @@ namespace DependencyVisualizer {
                 !contents.Contains("Microsoft Visual Studio Solution File, Format Version 10")) {
                 throw new UnsupportedFileFormatException(string.Format(CultureInfo.CurrentCulture, Resources.BadSolutionFormat, filename));
             }
-            Regex re = new Regex(@"Project\(""(?<ProjectType>{[\w-]+})""\)\s+=\s+""(?<Name>[\w\.]+?)"",\s+""(?<Path>[\w\.\\:]+?)"",\s+""(?<ProjectGuid>{[\w-]+})"".*?EndProject\b", RegexOptions.Singleline);
+            Regex re = new Regex(@"Project\(""(?<ProjectType>{[\w-]+})""\)\s+=\s+""(?<Name>[-_ \(\)\w\.]+?)"",\s+""(?<Path>[-_ \(\)\w\.\\:]+?)"",\s+""(?<ProjectGuid>{[\w-]+})"".*?EndProject\b", RegexOptions.Singleline);
             MatchCollection coll = re.Matches(contents);
             foreach (Match m in coll) {
                 if (m.Success) {                    

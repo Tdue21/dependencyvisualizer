@@ -4,7 +4,7 @@
 //
 // Project repository - keeps track of projects
 //
-// Copyright © 2007 Simon Dahlbacka
+// Copyright © 2007-2008 Simon Dahlbacka
 //
 // Created: 13.2 2007 Simon Dahlbacka
 // $Id: $
