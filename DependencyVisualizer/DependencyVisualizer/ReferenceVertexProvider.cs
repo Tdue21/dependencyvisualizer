@@ -1,72 +1,77 @@
-//----------------------------------------------------------------
-// Dependency Visualizer
-//----------------------------------------------------------------
-//
-// Reference vertex provider class to be used with Quickgraph
-//
-// Copyright © 2007 Simon Dahlbacka
-//
-// Created: 29.3 2007 Simon Dahlbacka
-// $Id: $
-//----------------------------------------------------------------
-// $NoKeywords: $
+// <copyright file="ReferenceVertexProvider.cs" company="Lemon Design">
+// Copyright (c) 2007-2008 Lemon Design. All rights reserved.
+// </copyright>
+// <author>Simon Dahlbacka</author>
+// <email>simon.dahlbacka@gmail.com</email>
+// <date>2007-03-29</date>
+// <summary>Reference vertex provider class to be used with Quickgraph</summary>
 
-using System;
-using System.Collections.Generic;
-using QuickGraph.Concepts.Providers;
-using QuickGraph.Concepts;
+namespace DependencyVisualizer
+{
+    using System;
+    using QuickGraph.Concepts;
+    using QuickGraph.Concepts.Providers;
 
-namespace DependencyVisualizer {
     /// <summary>
     /// Vertex factory for reference vertices
     /// </summary>
-    public sealed class ReferenceVertexProvider : IVertexProvider {
-        
-        private int m_nextId;
+    public sealed class ReferenceVertexProvider : IVertexProvider
+    {
+        /// <summary>
+        /// The id for the next vertex to be provided.
+        /// </summary>
+        private int nextId;
 
         /// <summary>
         /// Gets the total vertex count.
         /// </summary>
         /// <value>The vertex count.</value>
-        public int VertexCount {
-            get { return m_nextId; }
+        public int VertexCount
+        {
+            get { return this.nextId; }
         }
 
         #region IVertexProvider Members
-
-        /// <summary>
-        /// Provides the vertex.
-        /// </summary>
-        /// <returns></returns>
-        public IVertex ProvideVertex() {
-            return new ReferenceVertex(m_nextId++);
-        }
-
-        /// <summary>
-        /// Updates the vertex.
-        /// </summary>
-        /// <param name="v">The v.</param>
-        public void UpdateVertex(IVertex v) {
-            UpdateVertex((ReferenceVertex)v);
-        }
-
-        /// <summary>
-        /// Updates the vertex.
-        /// </summary>
-        /// <param name="v">The v.</param>
-        public void UpdateVertex(ReferenceVertex v) {
-            if (v == null) {
-                throw new ArgumentNullException("v");
-            }
-            v.ID = m_nextId++;
-        }
-
+        
         /// <summary>
         /// Gets the type of the vertex.
         /// </summary>
         /// <value>The type of the vertex.</value>
-        public Type VertexType {
+        public Type VertexType
+        {
             get { return typeof(ReferenceVertex); }
+        }
+
+        /// <summary>
+        /// Provides the vertex.
+        /// </summary>
+        /// <returns>A new vertex</returns>
+        public IVertex ProvideVertex()
+        {
+            return new ReferenceVertex(this.nextId++);
+        }
+
+        /// <summary>
+        /// Updates the vertex.
+        /// </summary>
+        /// <param name="v">The vertex to be updated.</param>
+        public void UpdateVertex(IVertex v)
+        {
+            this.UpdateVertex((ReferenceVertex)v);
+        }
+
+        /// <summary>
+        /// Updates the vertex.
+        /// </summary>
+        /// <param name="vertex">The vertex to be updated.</param>
+        public void UpdateVertex(ReferenceVertex vertex)
+        {
+            if (vertex == null)
+            {
+                throw new ArgumentNullException("vertex");
+            }
+
+            vertex.ID = this.nextId++;
         }
 
         #endregion

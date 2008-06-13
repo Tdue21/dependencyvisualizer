@@ -72,7 +72,7 @@
           </RegistryKey>
         </RegistryKey>
 
-        <!-- .csproj -->
+        <!-- .csproj / VS 2005 -->
         <RegistryKey Action="createAndRemoveOnUninstall"
                      Root="HKCR"
                      Key="VisualStudio.csproj.8.0\Shell\Visualize">
@@ -84,9 +84,32 @@
           </RegistryKey>
         </RegistryKey>
 
-        <!-- .vbproj -->
+        <!-- .csproj / VS 2008 -->
+        <RegistryKey Action="createAndRemoveOnUninstall"
+                     Root="HKCR"
+                     Key="VisualStudio.csproj.9.0\Shell\Visualize">
+          <RegistryValue Action="write"
+                         Value="Visualize Dependencies" Type="string" />
+          <RegistryKey Action="createAndRemoveOnUninstall" Key="Command">
+            <RegistryValue Action="write" Type="string"
+                           Value="&quot;[#DependencyVisualizer.exe]&quot; &quot;%1&quot;"/>
+          </RegistryKey>
+        </RegistryKey>
+
+        <!-- .vbproj / VS 2005 -->
         <RegistryKey Action="createAndRemoveOnUninstall" Root="HKCR"
                      Key="VisualStudio.vbproj.8.0\Shell\Visualize">
+          <RegistryValue Action="write"
+                         Value="Visualize Dependencies" Type="string" />
+          <RegistryKey Action="createAndRemoveOnUninstall" Key="Command">
+            <RegistryValue Action="write" Type="string"
+                           Value="&quot;[#DependencyVisualizer.exe]&quot; &quot;%1&quot;"/>
+          </RegistryKey>
+        </RegistryKey>
+
+        <!-- .vbproj / VS 2008 -->
+        <RegistryKey Action="createAndRemoveOnUninstall" Root="HKCR"
+                     Key="VisualStudio.vbproj.9.0\Shell\Visualize">
           <RegistryValue Action="write"
                          Value="Visualize Dependencies" Type="string" />
           <RegistryKey Action="createAndRemoveOnUninstall" Key="Command">

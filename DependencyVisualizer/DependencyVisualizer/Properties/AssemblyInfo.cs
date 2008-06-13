@@ -1,10 +1,17 @@
-﻿using System;
+﻿// <copyright file="AssemblyInfo.cs" company="Lemon Design">
+// Copyright (c) 2007-2008 Lemon Design. All rights reserved.
+// </copyright>
+// <author>Simon Dahlbacka</author>
+// <email>simon.dahlbacka@gmail.com</email>
+// <date>2008-10-27</date>
+// <summary>Assembly information</summary>
+
+using System;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 using System.Resources;
-
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
@@ -32,10 +39,9 @@ using System.Resources;
 //      Minor Version 
 //      Build Number
 //      Revision
-//
-[assembly: AssemblyVersion("1.2.8.0")]
+[assembly: AssemblyVersion("1.2.9.0")]
 
-[assembly: ReflectionPermission(SecurityAction.RequestMinimum, Flags=ReflectionPermissionFlag.NoFlags)]
-[assembly: FileIOPermission(SecurityAction.RequestMinimum, AllLocalFiles=FileIOPermissionAccess.Read)]
+[assembly: ReflectionPermission(SecurityAction.RequestMinimum, Flags = ReflectionPermissionFlag.NoFlags)]
+[assembly: FileIOPermission(SecurityAction.RequestMinimum, AllLocalFiles = FileIOPermissionAccess.Read)]
 [assembly: CLSCompliant(true)]
 [assembly: NeutralResourcesLanguage("en-US")]

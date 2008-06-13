@@ -68,11 +68,13 @@
     <Content Include="Versions.wxi" />
   </ItemGroup>
   <ItemGroup>
-    <WixExtension Include="C:\Program Files\Windows Installer XML v3\bin\WixUIExtension.dll">
+    <WixExtension Include="WixUIExtension">
       <Private>False</Private>
+      <HintPath>C:\Program Files\Windows Installer XML v3\bin\WixUIExtension.dll</HintPath>
     </WixExtension>
-    <WixExtension Include="C:\Program Files\Windows Installer XML v3\bin\WixUtilExtension.dll">
+    <WixExtension Include="WixUtilExtension">
       <Private>False</Private>
+      <HintPath>C:\Program Files\Windows Installer XML v3\bin\WixUtilExtension.dll</HintPath>
     </WixExtension>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WiX\v3.0\Wix.targets" />

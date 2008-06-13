@@ -1,73 +1,96 @@
-//----------------------------------------------------------------
-// Dependency visualizer
-//----------------------------------------------------------------
-//
-// A reference vertex class to be used with Quickgraph
-//
-// Copyright © 2007-2008 Simon Dahlbacka
-//
-// Created: 29.3 2007 Simon Dahlbacka
-// $Id: $
-//----------------------------------------------------------------
-// $NoKeywords: $
+// <copyright file="ReferenceVertex.cs" company="Lemon Design">
+// Copyright (c) 2007-2008 Lemon Design. All rights reserved.
+// </copyright>
+// <author>Simon Dahlbacka</author>
+// <email>simon.dahlbacka@gmail.com</email>
+// <date>2007-03-29</date>
+// <summary>A reference vertex class to be used with Quickgraph</summary>
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using QuickGraph.Concepts;
-using QuickGraph;
-
-namespace DependencyVisualizer {
+namespace DependencyVisualizer
+{
+    using System;
+    using QuickGraph;
 
     /// <summary>
     /// A reference vertex
     /// </summary>
-    public class ReferenceVertex : Vertex {
-        private ReferenceType m_referenceType;
-        private string m_path;
-        private string m_name;
+    public class ReferenceVertex : Vertex
+    {
+        /// <summary>
+        /// The path to the file represented by this vertex
+        /// </summary>
+        private string path;
+
+        /// <summary>
+        /// The name of the reference
+        /// </summary>
+        private string name;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ReferenceVertex"/> class.
         /// </summary>
-        public ReferenceVertex() { }
+        public ReferenceVertex()
+        {
+        }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ReferenceVertex"/> class.
         /// </summary>
         /// <param name="id">The vertex id.</param>
-        public ReferenceVertex(int id) : base(id) { }
+        public ReferenceVertex(int id)
+            : base(id)
+        {
+        }
 
         /// <summary>
         /// Gets or sets the type of the reference.
         /// </summary>
         /// <value>The type of the reference.</value>
-        public ReferenceType ReferenceType {
-            get { return m_referenceType; }
-            set { m_referenceType = value; }
+        public ReferenceType ReferenceType
+        {
+            get;
+            set;
         }
+
         /// <summary>
         /// Gets or sets the path.
         /// </summary>
-        /// <value>The path.</value>
-        public string Path {
-            get { return m_path; }
-            set {
+        public string Path
+        {
+            get
+            {
+                return this.path;
+            }
+
+            set
+            {
                 if (value == null)
+                {
                     throw new ArgumentNullException("value");
-                m_path = value;
+                }
+
+                this.path = value;
             }
         }
+
         /// <summary>
         /// Gets or sets the name.
         /// </summary>
-        /// <value>The name.</value>
-        public string Name {
-            get { return m_name; }
-            set {
+        public string Name
+        {
+            get
+            {
+                return this.name;
+            }
+
+            set
+            {
                 if (value == null)
+                {
                     throw new ArgumentNullException("value");
-                m_name = value;
+                }
+
+                this.name = value;
             }
         }
     }

@@ -6,6 +6,18 @@ EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "SetupDependencyVisualizer", "SetupDependencyVisualizer\SetupDependencyVisualizer.wixproj", "{98D627BB-1A53-4927-9153-B20EC2611144}"
 EndProject
 Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs04.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DependencyVisualizer\\DependencyVisualizer.csproj
+		SccProjectName1 = DependencyVisualizer
+		SccLocalPath1 = DependencyVisualizer
+		SccProjectUniqueName2 = SetupDependencyVisualizer\\SetupDependencyVisualizer.wixproj
+		SccProjectName2 = SetupDependencyVisualizer
+		SccLocalPath2 = SetupDependencyVisualizer
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -25,30 +37,15 @@ Global
 		{FC465092-821A-4077-9892-EEFF97C51C89}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{FC465092-821A-4077-9892-EEFF97C51C89}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{FC465092-821A-4077-9892-EEFF97C51C89}.Release|Win32.ActiveCfg = Release|Any CPU
-		{98D627BB-1A53-4927-9153-B20EC2611144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{98D627BB-1A53-4927-9153-B20EC2611144}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{98D627BB-1A53-4927-9153-B20EC2611144}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{98D627BB-1A53-4927-9153-B20EC2611144}.Debug|Win32.ActiveCfg = Debug|Any CPU
-		{98D627BB-1A53-4927-9153-B20EC2611144}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{98D627BB-1A53-4927-9153-B20EC2611144}.Release|Any CPU.Build.0 = Release|Any CPU
-		{98D627BB-1A53-4927-9153-B20EC2611144}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{98D627BB-1A53-4927-9153-B20EC2611144}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{98D627BB-1A53-4927-9153-B20EC2611144}.Release|Win32.ActiveCfg = Release|Any CPU
+		{98D627BB-1A53-4927-9153-B20EC2611144}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{98D627BB-1A53-4927-9153-B20EC2611144}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{98D627BB-1A53-4927-9153-B20EC2611144}.Debug|Win32.ActiveCfg = Debug|x86
+		{98D627BB-1A53-4927-9153-B20EC2611144}.Release|Any CPU.ActiveCfg = Release|x86
+		{98D627BB-1A53-4927-9153-B20EC2611144}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{98D627BB-1A53-4927-9153-B20EC2611144}.Release|Win32.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 3
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs04.codeplex.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = DependencyVisualizer\\DependencyVisualizer.csproj
-		SccProjectName1 = DependencyVisualizer
-		SccLocalPath1 = DependencyVisualizer
-		SccProjectUniqueName2 = SetupDependencyVisualizer\\SetupDependencyVisualizer.wixproj
-		SccProjectName2 = SetupDependencyVisualizer
-		SccLocalPath2 = SetupDependencyVisualizer
 	EndGlobalSection
 	GlobalSection(TextTemplating) = postSolution
 		TextTemplating = 1
