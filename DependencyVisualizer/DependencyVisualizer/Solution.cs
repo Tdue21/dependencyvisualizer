@@ -82,7 +82,7 @@ namespace DependencyVisualizer
                 throw new UnsupportedFileFormatException(string.Format(CultureInfo.CurrentCulture, Resources.BadSolutionFormat, fileName));
             }
 
-            Regex re = new Regex(@"Project\(""(?<ProjectType>{[\w-]+})""\)\s+=\s+""(?<Name>[-_ \(\)\w\.]+?)"",\s+""(?<Path>[-_ \(\)\w\.\\:]+?)"",\s+""(?<ProjectGuid>{[\w-]+})"".*?EndProject\b", RegexOptions.Singleline);
+            Regex re = new Regex(@"Project\(""(?<ProjectType>{[\w-]+})""\)\s+=\s+""(?<Name>[-_ \+\(\)\w\.]+?)"",\s+""(?<Path>[-_ \+\(\)\w\.\\:]+?)"",\s+""(?<ProjectGuid>{[\w-]+})"".*?EndProject\b", RegexOptions.Singleline);
             MatchCollection coll = re.Matches(contents);
             foreach (Match m in coll)
             {
