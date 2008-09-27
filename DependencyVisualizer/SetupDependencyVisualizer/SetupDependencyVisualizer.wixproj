@@ -81,6 +81,8 @@
     <ZipFiles Include="$(SolutionDir)\**\*.txt" Exclude="$(SolutionDir)\**\.svn\*.txt;$(SolutionDir)\**\*.FileList.txt" />
     <ZipFiles Include="$(SolutionDir)\**\*.*proj" />
     <ZipFiles Include="$(SolutionDir)\**\*.cs" />
+    <ZipFiles Include="$(SolutionDir)\**\*.cpp" />
+    <ZipFiles Include="$(SolutionDir)\**\*.h" />
     <ZipFiles Include="$(SolutionDir)\**\*.rtf" />
     <ZipFiles Include="$(SolutionDir)\**\*.ico" />
     <ZipFiles Include="$(SolutionDir)\**\app.config" />
