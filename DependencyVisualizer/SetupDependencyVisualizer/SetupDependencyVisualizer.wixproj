@@ -6,7 +6,6 @@
     <SchemaVersion>2.0</SchemaVersion>
     <OutputName>SetupDependencyVisualizer</OutputName>
     <OutputType>Package</OutputType>
-    <WixToolPath>C:\Program Files\Windows Installer XML v3\bin\</WixToolPath>
     <SccProjectName>SAK</SccProjectName>
     <SccProvider>SAK</SccProvider>
     <SccAuxPath>SAK</SccAuxPath>
@@ -68,13 +67,11 @@
     <Content Include="Versions.wxi" />
   </ItemGroup>
   <ItemGroup>
-    <WixExtension Include="WixUIExtension">
-      <Private>False</Private>
-      <HintPath>C:\Program Files\Windows Installer XML v3\bin\WixUIExtension.dll</HintPath>
-    </WixExtension>
     <WixExtension Include="WixUtilExtension">
-      <Private>False</Private>
-      <HintPath>C:\Program Files\Windows Installer XML v3\bin\WixUtilExtension.dll</HintPath>
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
     </WixExtension>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WiX\v3.0\Wix.targets" />
