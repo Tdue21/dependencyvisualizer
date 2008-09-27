@@ -42,7 +42,7 @@
       <![CDATA[1]]>
     </Property>
     
-    <Icon Id="DependencyVisualizerIcon.exe" SourceFile="$(var.DependencyVisualizer.ProjectDir)DependencyVisualizerIcons.exe"/>
+    <Icon Id="DependencyVisualizerIcon.exe" SourceFile="$(var.SolutionDir)\Release\DependencyVisualizerIcons.exe"/>
 
     <Feature Id="ProductFeature" Title="Binaries" Level="1">      
       <ComponentGroupRef Id="CG.DependencyVisualizer" />
