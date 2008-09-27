@@ -39,7 +39,7 @@ using System.Resources;
 //      Minor Version 
 //      Build Number
 //      Revision
-[assembly: AssemblyVersion("1.2.9.0")]
+[assembly: AssemblyVersion("1.2.10.0")]
 
 [assembly: ReflectionPermission(SecurityAction.RequestMinimum, Flags = ReflectionPermissionFlag.NoFlags)]
 [assembly: FileIOPermission(SecurityAction.RequestMinimum, AllLocalFiles = FileIOPermissionAccess.Read)]
