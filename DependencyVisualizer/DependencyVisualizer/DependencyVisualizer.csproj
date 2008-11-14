@@ -43,7 +43,6 @@
     <DocumentationFile>bin\Debug\DependencyVisualizer.XML</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
-
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <OutputPath>bin\x86\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
@@ -65,9 +64,9 @@
   <ItemGroup>
     <Reference Include="NGraphviz, Version=1.5.1609.21361, Culture=neutral, PublicKeyToken=05e526eb3b1f8001" />
     <Reference Include="NGraphviz.Helpers, Version=1.5.1609.21362, Culture=neutral, PublicKeyToken=05e526eb3b1f8001" />
-    <Reference Include="QuickGraph, Version=2.4.2.130, Culture=neutral, PublicKeyToken=975e84d0c8d6464d" />
-    <Reference Include="QuickGraph.Algorithms, Version=2.4.2.130, Culture=neutral, PublicKeyToken=975e84d0c8d6464d" />
-    <Reference Include="QuickGraph.Algorithms.Graphviz, Version=2.4.2.130, Culture=neutral" />
+    <Reference Include="QuickGraph, Version=2.21.1.0, Culture=neutral, PublicKeyToken=975e84d0c8d6464d" />
+    <Reference Include="QuickGraph.Algorithms, Version=2.21.1.0, Culture=neutral, PublicKeyToken=975e84d0c8d6464d" />
+    <Reference Include="QuickGraph.Algorithms.Graphviz, Version=2.21.1.0, Culture=neutral" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -110,6 +109,11 @@
   <ItemGroup>
     <Content Include="DependencyVisualizer.ico" />
     <Content Include="Prerequisites.txt" />
+    <Content Include="Prerequisites\NGraphviz.dll" />
+    <Content Include="Prerequisites\NGraphviz.Helpers.dll" />
+    <Content Include="Prerequisites\QuickGraph.Algorithms.dll" />
+    <Content Include="Prerequisites\QuickGraph.Algorithms.Graphviz.dll" />
+    <Content Include="Prerequisites\QuickGraph.dll" />
     <None Include="App.config" />
     <None Include="ClassDiagram.cd" />
     <None Include="License.rtf">

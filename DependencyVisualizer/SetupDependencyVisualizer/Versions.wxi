@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Include>
-  <?define DependencyVisualizerVersion = "1.2.10" ?>
+  <?define DependencyVisualizerVersion = "1.2.11" ?>
 </Include>

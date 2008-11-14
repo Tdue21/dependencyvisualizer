@@ -78,13 +78,16 @@
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
   <ItemGroup>
     <ZipFiles Include="$(SolutionDir)\*.sln" />
-    <ZipFiles Include="$(SolutionDir)\**\*.txt" Exclude="$(SolutionDir)\**\.svn\*.txt;$(SolutionDir)\**\*.FileList.txt" />
+    <ZipFiles Include="$(SolutionDir)\**\*.txt" Exclude="$(SolutionDir)\**\.svn\*.txt;$(SolutionDir)\**\*.FileList*.txt" />
     <ZipFiles Include="$(SolutionDir)\**\*.*proj" />
     <ZipFiles Include="$(SolutionDir)\**\*.cs" />
+    <ZipFiles Include="$(SolutionDir)\**\*.cd" />
     <ZipFiles Include="$(SolutionDir)\**\*.cpp" />
+    <ZipFiles Include="$(SolutionDir)\DependencyVisualizer\Prerequisites\*.dll"/>
     <ZipFiles Include="$(SolutionDir)\**\*.h" />
+    <ZipFiles Include="$(SolutionDir)\**\*.rc"/>
     <ZipFiles Include="$(SolutionDir)\**\*.rtf" />
-    <ZipFiles Include="$(SolutionDir)\**\*.ico" />
+    <ZipFiles Include="$(SolutionDir)\**\*.ico" />    
     <ZipFiles Include="$(SolutionDir)\**\app.config" />
     <ZipFiles Include="$(SolutionDir)\**\*.cd" />
     <ZipFiles Include="$(SolutionDir)\**\*.settings" />
