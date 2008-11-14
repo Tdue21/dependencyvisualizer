@@ -5,14 +5,18 @@
   <!-- Use star, as we're only interested in major upgrades -->
   <Product Id="*" 
            Name="Dependency Visualizer $(var.DependencyVisualizerVersion)" 
-           Language="1033" 
+           Language="1033"
+           Codepage="1252"
            Version="$(var.DependencyVisualizerVersion)" 
            Manufacturer="Simon Dahlbacka" 
            UpgradeCode="a618bed3-771e-45ad-a441-7910a9b58820">
     <Package InstallerVersion="200" 
              Compressed="yes"
-             Description="Visual Studio reference visualizer" 
-             InstallPrivileges="elevated" />
+             Description="MSBuild reference visualizer" 
+             Comments="This installer database contains the logic and data required to install [ProductName]."
+             InstallPrivileges="elevated" 
+             InstallScope="perMachine"
+             Keywords="Installer, Dependency Visualizer, MSBuild"/>
     
     <WixVariable Id="WixUILicenseRtf" Value="..\DependencyVisualizer\License.rtf" />
 
@@ -33,15 +37,13 @@
       <UpgradeVersion Minimum="0.9.9" IncludeMinimum="yes" Maximum="$(var.DependencyVisualizerVersion)" IncludeMaximum="no" Property="OLDERVERSIONBEINGUPGRADED" />
     </Upgrade>
 
+    <Property Id="ARPCONTACT" Value="Simon Dahlbacka"/>
     <Property Id="ARPURLINFOABOUT" Value="http://www.codeplex.com/dependencyvisualizer" />
     <Property Id="ARPURLUPDATEINFO" Value="http://www.codeplex.com/dependencyvisualizer" />
     <Property Id="ARPHELPLINK" Value="http://www.codeplex.com/dependencyvisualizer" />
     <Property Id="ARPPRODUCTICON" Value="DependencyVisualizerIcon.exe" />
-    
-    <Property Id="ALLUSERS">
-      <![CDATA[1]]>
-    </Property>
-    
+    <Property Id="ARPSIZE" Value="1800"/>
+        
     <Icon Id="DependencyVisualizerIcon.exe" SourceFile="$(var.SolutionDir)\Release\DependencyVisualizerIcons.exe"/>
 
     <Feature Id="ProductFeature" Title="Binaries" Level="1">      
@@ -54,12 +56,30 @@
     <!-- Install Sequences -->
     <InstallExecuteSequence>
       <FindRelatedProducts Before="LaunchConditions" />
-      <RemoveExistingProducts After="InstallValidate" />
+      <RemoveExistingProducts After="InstallInitialize" />
+      <Custom Action="SaveTargetDir" After="InstallValidate">
+        NOT
+        Installed
+      </Custom>
     </InstallExecuteSequence>
 
     <InstallUISequence>
+      
       <FindRelatedProducts Before="LaunchConditions" />
+      <!-- App search is what does FindInstallLocation, and it is dependent on FindRelatedProducts-->
+      <AppSearch After="FindRelatedProducts"/>
     </InstallUISequence>
+
+    <!-- Find previous installation -->
+    <Property Id="INSTALLLOCATION">
+      <RegistrySearch Id="FindInstallLocation"
+          Root="HKLM"
+          Key="Software\Microsoft\Windows\CurrentVersion\Uninstall\[OLDERVERSIONBEINGUPGRADED]"
+          Name="InstallLocation"
+          Type="raw" />
+    </Property>
+
+    <CustomAction Id="SaveTargetDir" Property="ARPINSTALLLOCATION" Value="[INSTALLLOCATION]" />
 
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLLOCATION" />
     <UIRef Id="WixUI_ErrorProgressText" />
