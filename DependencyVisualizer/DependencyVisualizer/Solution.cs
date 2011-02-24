@@ -77,7 +77,8 @@ namespace DependencyVisualizer
             solution.FileName = fileName;
             string contents = File.ReadAllText(fileName);
             if (!contents.Contains("Microsoft Visual Studio Solution File, Format Version 9") &&
-                !contents.Contains("Microsoft Visual Studio Solution File, Format Version 10"))
+                !contents.Contains("Microsoft Visual Studio Solution File, Format Version 10") &&
+                !contents.Contains("Microsoft Visual Studio Solution File, Format Version 11"))
             {
                 throw new UnsupportedFileFormatException(string.Format(CultureInfo.CurrentCulture, Resources.BadSolutionFormat, fileName));
             }
