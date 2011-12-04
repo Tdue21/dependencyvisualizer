@@ -93,8 +93,16 @@ namespace DependencyVisualizer
                     return;
             }
 
-            GraphvizAlgorithm svg = new GraphvizAlgorithm(graph, Resources.Dependencies, GraphvizImageType.Svg);
-            GraphvizAlgorithm png = new GraphvizAlgorithm(graph, Resources.Dependencies, GraphvizImageType.Png);
+            GraphvizAlgorithm svg = null;
+            if (Settings.Default.GenerateSvg)
+            {
+               svg = new GraphvizAlgorithm(graph, Resources.Dependencies, GraphvizImageType.Svg);
+            }
+            GraphvizAlgorithm png = null;
+            if (Settings.Default.GeneratePng)
+            {
+                png = new GraphvizAlgorithm(graph, Resources.Dependencies, GraphvizImageType.Png);
+            }
             foreach (Project project in solution.Projects.Values)
             {
                 this.AddProjectToGraph(project, graph);
@@ -103,11 +111,16 @@ namespace DependencyVisualizer
             Tracer.Info(
                 "Added {0} vertices to graph ...",
                 (graph.VertexProvider as ReferenceVertexProvider).VertexCount);
-            svg.WriteVertex += this.GraphvizAlgorithm_WriteVertex;
-            svg.Write(Path.GetFileNameWithoutExtension(solutionPath));
-
-            png.WriteVertex += this.GraphvizAlgorithm_WriteVertex;
-            png.Write(Path.GetFileNameWithoutExtension(solutionPath));
+            if (svg != null)
+            {
+                svg.WriteVertex += this.GraphvizAlgorithm_WriteVertex;
+                svg.Write(Path.GetFileNameWithoutExtension(solutionPath));
+            }
+            if (png != null)
+            {
+                png.WriteVertex += this.GraphvizAlgorithm_WriteVertex;
+                png.Write(Path.GetFileNameWithoutExtension(solutionPath));
+            }
         }
 
         /// <summary>
