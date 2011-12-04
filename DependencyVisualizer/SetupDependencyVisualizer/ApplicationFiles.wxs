@@ -137,7 +137,18 @@
           </RegistryKey>
         </RegistryKey>
 
+        <!-- .vcxproj / VS 2010 -->
+        <RegistryKey Root="HKCR"
+                     Key="VisualStudio.vcxproj.10.0\Shell\Visualize">
+          <RegistryValue Action="write"
+                         Value="Visualize Dependencies" Type="string" />
+          <RegistryKey Key="Command">
+            <RegistryValue Action="write" Type="string"
+                           Value="&quot;[#DependencyVisualizer.exe]&quot; &quot;%1&quot;"/>
+          </RegistryKey>
+        </RegistryKey>
 
+        
         <!--
                 This is how it should be done, if it would have worked..
                 
