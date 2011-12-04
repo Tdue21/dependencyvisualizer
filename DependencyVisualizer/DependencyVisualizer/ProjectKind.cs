@@ -69,6 +69,13 @@ namespace DependencyVisualizer
         /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Wix", Justification = "This is the correct name")]
         [Description("{930C7802-8A8C-48F9-8165-68863BCCD9DD}")]
-        Wix
+        Wix,
+
+        /// <summary>
+        /// C++ project (vcxproj)
+        /// </summary>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Naming", "CA1704:IdentifiersShouldBeSpelledCorrectly", MessageId = "Cpp", Justification = "This is the correct name")]
+        [Description("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}")]
+        CppX
     }
 }
