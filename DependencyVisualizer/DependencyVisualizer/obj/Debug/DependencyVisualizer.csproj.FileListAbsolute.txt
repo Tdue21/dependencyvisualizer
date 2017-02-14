@@ -1,0 +1,17 @@
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\DependencyVisualizer.exe.config
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\DependencyVisualizer.XML
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\DependencyVisualizer.exe
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\DependencyVisualizer.pdb
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\DependencyVisualizer.exe.CodeAnalysisLog.xml
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\DependencyVisualizer.exe.lastcodeanalysissucceeded
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\NGraphviz.dll
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\NGraphviz.Helpers.dll
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\QuickGraph.Algorithms.dll
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\QuickGraph.Algorithms.Graphviz.dll
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\bin\Debug\QuickGraph.dll
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\obj\Debug\DependencyVisualizer.csprojResolveAssemblyReference.cache
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\obj\Debug\DependencyVisualizer.ConfigureDependencyVisualizer.resources
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\obj\Debug\DependencyVisualizer.Properties.Resources.resources
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\obj\Debug\DependencyVisualizer.csproj.GenerateResource.Cache
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\obj\Debug\DependencyVisualizer.exe
+C:\Development\Forks\DependencyVisualizer\DependencyVisualizer\DependencyVisualizer\obj\Debug\DependencyVisualizer.pdb

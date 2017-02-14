@@ -1,0 +1,695 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DependencyVisualizer</name>
+    </assembly>
+    <members>
+        <member name="T:DependencyVisualizer.ConfigureDependencyVisualizer">
+            <summary>
+            Configuration UI for Dependency Visualizer
+            </summary>
+            <summary>
+            Configuration UI for Dependency visualizer
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.ConfigureDependencyVisualizer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.ConfigureDependencyVisualizer"/> class.
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ConfigureDependencyVisualizer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.ConfigureDependencyVisualizer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:DependencyVisualizer.ConfigureDependencyVisualizer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:DependencyVisualizer.DependencyException">
+            <summary>
+            Dependency exception
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.DependencyException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.DependencyException"/> class.
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.DependencyException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.DependencyException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:DependencyVisualizer.DependencyException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.DependencyException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:DependencyVisualizer.DependencyException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.DependencyException"/> class.
+            </summary>
+            <param name="serializationInfo">The serialization info.</param>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:DependencyVisualizer.ReferenceType">
+            <summary>
+            Type of reference
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ReferenceType.File">
+            <summary>
+            File reference
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ReferenceType.Project">
+            <summary>
+            Project reference
+            </summary>
+        </member>
+        <member name="T:DependencyVisualizer.DependencyGraphVisualizer">
+            <summary>
+            Graph manipulation class
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.DependencyGraphVisualizer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.DependencyGraphVisualizer"/> class.
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.DependencyGraphVisualizer.Visualize(System.String)">
+            <summary>
+            Visualizes the specified solution.
+            </summary>
+            <param name="solutionPath">The path to the solution</param>
+        </member>
+        <member name="M:DependencyVisualizer.DependencyGraphVisualizer.AddProjectToGraph(DependencyVisualizer.Project,QuickGraph.Representations.AdjacencyGraph)">
+            <summary>
+            Adds the specified project to graph.
+            </summary>
+            <param name="project">The project to add.</param>
+            <param name="graph">The target graph.</param>
+        </member>
+        <member name="M:DependencyVisualizer.DependencyGraphVisualizer.GraphvizAlgorithm_WriteVertex(System.Object,QuickGraph.Concepts.VertexEventArgs)">
+            <summary>
+            Event handler for the <see cref="E:QuickGraph.Algorithms.Graphviz.GraphvizAlgorithm.WriteVertex"/> event.
+            </summary>
+            <param name="sender">The source of the event.</param>
+            <param name="e">The <see cref="T:QuickGraph.Concepts.VertexEventArgs"/> instance containing the event data.</param>
+        </member>
+        <member name="T:DependencyVisualizer.FileRepository">
+            <summary>
+            Repository of used file vertices
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.FileRepository.instance">
+            <summary>
+            The instance
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.FileRepository.fileStore">
+            <summary>
+            Storage for the vertices
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.FileRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.FileRepository"/> class.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.FileRepository.Instance">
+            <summary>
+            Gets the repository instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="M:DependencyVisualizer.FileRepository.IsNet20(System.String)">
+            <summary>
+            Determines whether the specified name is a .NET 2.0 assembly.
+            </summary>
+            <param name="name">The assembly name.</param>
+            <returns>
+            	<c>true</c> if the specified name is a .NET 2.0 assembly; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:DependencyVisualizer.FileRepository.IsNet30(System.String)">
+            <summary>
+            Determines whether the specified name is a .NET 3.0 assembly.
+            </summary>
+            <param name="name">The assembly name.</param>
+            <returns>
+            	<c>true</c> if the specified name is a .NET 3.0 assembly; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:DependencyVisualizer.FileRepository.IsNet35(System.String)">
+            <summary>
+            Determines whether the specified name is a .NET 3.5 assembly.
+            </summary>
+            <param name="name">The assembly name.</param>
+            <returns>
+            	<c>true</c> if the specified name is a .NET 3.5 assembly; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:DependencyVisualizer.FileRepository.MangleName(System.String)">
+            <summary>
+            Mangles the file name.
+            </summary>
+            <param name="name">The original name.</param>
+            <returns>the mangled name</returns>
+        </member>
+        <member name="M:DependencyVisualizer.FileRepository.Add(System.String,QuickGraph.Concepts.IVertex)">
+            <summary>
+            Adds the specified file.
+            </summary>
+            <param name="file">The file to add.</param>
+            <param name="vertex">The corresponding vertex.</param>
+        </member>
+        <member name="M:DependencyVisualizer.FileRepository.GetByName(System.String)">
+            <summary>
+            Gets the vertex of the file
+            </summary>
+            <param name="name">The name of the file.</param>
+            <returns>the vertex or <c>null</c> if this file haven't been used yet</returns>
+        </member>
+        <member name="T:DependencyVisualizer.ProjectKind">
+            <summary>
+            Project kind
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectKind.Unknown">
+            <summary>
+            Unknown project type
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectKind.CSharp">
+            <summary>
+            C# project
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectKind.VBNet">
+            <summary>
+            VB.NET project
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectKind.SolutionItems">
+            <summary>
+            Solution folder
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectKind.Setup">
+            <summary>
+            Setup project
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectKind.Cpp">
+            <summary>
+            C++ project
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectKind.JSharp">
+            <summary>
+            J# project
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectKind.WebProject">
+            <summary>
+            Web project 
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectKind.Wix">
+            <summary>
+            WiX project
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectKind.CppX">
+            <summary>
+            C++ project (vcxproj)
+            </summary>
+        </member>
+        <member name="T:DependencyVisualizer.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.AdditionalCopyright">
+            <summary>
+              Looks up a localized string similar to Portions Copyright © 2000-2004 Jonathan De Halleux, Jamie Cansdale.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.BadSolutionFormat">
+            <summary>
+              Looks up a localized string similar to The file {0} does not seem to be a Visual Studio 2005 or Visual Studio 2008 solution file..
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.Dependencies">
+            <summary>
+              Looks up a localized string similar to Dependencies.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.DependencyVisualizationError">
+            <summary>
+              Looks up a localized string similar to Dependency visualization error..
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.DependencyVisualizer">
+            <summary>
+              Looks up a localized string similar to Dependency Visualizer.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.ProgramDescription">
+            <summary>
+              Looks up a localized string similar to Walk through the projects in the solution and create a nice dependency graph.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.UnexpectedError">
+            <summary>
+              Looks up a localized string similar to Unexpected error: {0}.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.UnkownProjectDependency">
+            <summary>
+              Looks up a localized string similar to Unknown project found as project dependency.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.UnsupportedExtension">
+            <summary>
+              Looks up a localized string similar to Project extension {0} currently unsupported..
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.UnsupportedFileFormat">
+            <summary>
+              Looks up a localized string similar to The file format is unsupported..
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.Usage">
+            <summary>
+              Looks up a localized string similar to Usage.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Properties.Resources.UsageInformation">
+            <summary>
+              Looks up a localized string similar to Dependency Visualizer usage information.
+            </summary>
+        </member>
+        <member name="T:DependencyVisualizer.UnsupportedFileFormatException">
+            <summary>
+            Unsupported file format exception
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.UnsupportedFileFormatException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.UnsupportedFileFormatException"/> class.
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.UnsupportedFileFormatException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.UnsupportedFileFormatException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+        </member>
+        <member name="M:DependencyVisualizer.UnsupportedFileFormatException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.UnsupportedFileFormatException"/> class.
+            </summary>
+            <param name="message">The message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:DependencyVisualizer.UnsupportedFileFormatException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.UnsupportedFileFormatException"/> class.
+            </summary>
+            <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo"></see> that holds the serialized object data about the exception being thrown.</param>
+            <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext"></see> that contains contextual information about the source or destination.</param>
+            <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult"></see> is zero (0). </exception>
+            <exception cref="T:System.ArgumentNullException">The info parameter is null. </exception>
+        </member>
+        <member name="T:DependencyVisualizer.Program">
+            <summary>
+            Entry point
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.Program.Main(System.String[])">
+            <summary>
+            Entry point
+            </summary>
+            <param name="args">The command line args.</param>
+        </member>
+        <member name="M:DependencyVisualizer.Program.Usage">
+            <summary>
+            Display the instructions how to use this software. 
+            </summary>
+        </member>
+        <member name="T:DependencyVisualizer.Project">
+            <summary>
+            A msbuild compatible project
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.Project.guid">
+            <summary>
+            Backing field for the <see cref="P:DependencyVisualizer.Project.Guid"/> property.
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.Project.projectReferences">
+            <summary>
+            Collection containing all project references.
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.Project.references">
+            <summary>
+            Collection containing all non-project references.
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.Project.solution">
+            <summary>
+            The parent solution
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.Project.projectDependencyGuids">
+            <summary>
+            The guids of all project referenced.
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.Project.#ctor(DependencyVisualizer.Solution)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.Project"/> class.
+            </summary>
+            <param name="solution">The parent solution.</param>
+        </member>
+        <member name="P:DependencyVisualizer.Project.Vertex">
+            <summary>
+            Gets or sets the vertex.
+            </summary>
+            <value>The vertex.</value>
+        </member>
+        <member name="P:DependencyVisualizer.Project.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>        
+        </member>
+        <member name="P:DependencyVisualizer.Project.Path">
+            <summary>
+            Gets or sets the path.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Project.Guid">
+            <summary>
+            Gets or sets the GUID.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Project.ProjectType">
+            <summary>
+            Gets or sets the type of the project.
+            </summary>
+            <value>The type of the project.</value>
+        </member>
+        <member name="P:DependencyVisualizer.Project.ProjectReferences">
+            <summary>
+            Gets the project references.
+            </summary>
+            <value>The project references.</value>
+        </member>
+        <member name="P:DependencyVisualizer.Project.References">
+            <summary>
+            Gets the references.
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.Project.GetKind(System.Guid)">
+            <summary>
+            Gets the project kind.
+            </summary>
+            <param name="projectIdentifier">The project type GUID.</param>
+            <returns>The project kind represented by the type in <paramref name="projectIdentifier"/></returns>
+        </member>
+        <member name="M:DependencyVisualizer.Project.Parse">
+            <summary>
+            Parses the project file
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.Project.AddProjectDependency(System.String)">
+            <summary>
+            Adds a project dependency.
+            </summary>
+            <param name="projectIdentifier">The GUID of the project depended on.</param>
+        </member>
+        <member name="M:DependencyVisualizer.Project.FromFile(System.String,DependencyVisualizer.Solution)">
+            <summary>
+            Create a project from file
+            </summary>
+            <param name="projectPath">The project path.</param>
+            <param name="solution">The parent solution.</param>
+            <returns>a partially parsed project</returns>
+        </member>
+        <member name="M:DependencyVisualizer.Project.FromVCProjFile(System.String,DependencyVisualizer.Solution)">
+            <summary>
+            Create a project instance from a Visual C++ project file
+            </summary>
+            <param name="projectPath">The path to the project file</param>
+            <param name="solution">The parent solution</param>
+            <returns>A project instance representing the specified project</returns>
+        </member>
+        <member name="M:DependencyVisualizer.Project.ParseVCProj">
+            <summary>
+            Parse a Visual C++ project file
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.Project.DecodePath(System.String)">
+            <summary>
+            Decode the funky almost url-encoded path that Visual Studio sometimes use.
+            </summary>
+            <param name="path">The possibly encoded path</param>
+            <returns>The decoded path</returns>
+        </member>
+        <member name="T:DependencyVisualizer.ProjectRepository">
+            <summary>
+            Project repository
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectRepository.instance">
+            <summary>
+            The singleton instance
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ProjectRepository.projectStore">
+            <summary>
+            The backing field for projects
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.ProjectRepository.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.ProjectRepository"/> class.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.ProjectRepository.Instance">
+            <summary>
+            Gets the repository instance.
+            </summary>
+            <value>The instance.</value>
+        </member>
+        <member name="M:DependencyVisualizer.ProjectRepository.GetByGuid(System.Guid)">
+            <summary>
+            Gets the project by GUID.
+            </summary>
+            <param name="projectIdentifier">The project GUID.</param>
+            <returns>the specified project or <c>null</c> if specified project does not yet exist</returns>
+        </member>
+        <member name="M:DependencyVisualizer.ProjectRepository.Add(DependencyVisualizer.Project)">
+            <summary>
+            Adds the specified project.
+            </summary>
+            <param name="project">The project.</param>
+        </member>
+        <member name="T:DependencyVisualizer.ReferenceVertex">
+            <summary>
+            A reference vertex
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ReferenceVertex.path">
+            <summary>
+            The path to the file represented by this vertex
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ReferenceVertex.name">
+            <summary>
+            The name of the reference
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.ReferenceVertex.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.ReferenceVertex"/> class.
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.ReferenceVertex.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.ReferenceVertex"/> class.
+            </summary>
+            <param name="id">The vertex id.</param>
+        </member>
+        <member name="P:DependencyVisualizer.ReferenceVertex.ReferenceType">
+            <summary>
+            Gets or sets the type of the reference.
+            </summary>
+            <value>The type of the reference.</value>
+        </member>
+        <member name="P:DependencyVisualizer.ReferenceVertex.Path">
+            <summary>
+            Gets or sets the path.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.ReferenceVertex.Name">
+            <summary>
+            Gets or sets the name.
+            </summary>
+        </member>
+        <member name="T:DependencyVisualizer.ReferenceVertexProvider">
+            <summary>
+            Vertex factory for reference vertices
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.ReferenceVertexProvider.nextId">
+            <summary>
+            The id for the next vertex to be provided.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.ReferenceVertexProvider.VertexCount">
+            <summary>
+            Gets the total vertex count.
+            </summary>
+            <value>The vertex count.</value>
+        </member>
+        <member name="P:DependencyVisualizer.ReferenceVertexProvider.VertexType">
+            <summary>
+            Gets the type of the vertex.
+            </summary>
+            <value>The type of the vertex.</value>
+        </member>
+        <member name="M:DependencyVisualizer.ReferenceVertexProvider.ProvideVertex">
+            <summary>
+            Provides the vertex.
+            </summary>
+            <returns>A new vertex</returns>
+        </member>
+        <member name="M:DependencyVisualizer.ReferenceVertexProvider.UpdateVertex(QuickGraph.Concepts.IVertex)">
+            <summary>
+            Updates the vertex.
+            </summary>
+            <param name="v">The vertex to be updated.</param>
+        </member>
+        <member name="M:DependencyVisualizer.ReferenceVertexProvider.UpdateVertex(DependencyVisualizer.ReferenceVertex)">
+            <summary>
+            Updates the vertex.
+            </summary>
+            <param name="vertex">The vertex to be updated.</param>
+        </member>
+        <member name="T:DependencyVisualizer.Solution">
+            <summary>
+            A visual studio solution file
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.Solution.projects">
+            <summary>
+            The projects contained in this solution. The project projectIdentifier is used as key.
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.Solution.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:DependencyVisualizer.Solution"/> class.
+            </summary>
+        </member>
+        <member name="P:DependencyVisualizer.Solution.FileName">
+            <summary>
+            Gets or sets the name of the file.
+            </summary>
+            <value>The name of the file.</value>
+        </member>
+        <member name="P:DependencyVisualizer.Solution.Projects">
+            <summary>
+            Gets the projects.
+            </summary>
+            <value>The projects.</value>
+        </member>
+        <member name="M:DependencyVisualizer.Solution.EmptySolution">
+            <summary>
+            Creates a new empty solution
+            </summary>
+            <returns>The newly created solution</returns>
+        </member>
+        <member name="M:DependencyVisualizer.Solution.FromFile(System.String)">
+            <summary>
+            Parse a solution file
+            </summary>
+            <param name="fileName">The solution file name.</param>
+            <returns>The newly created solution</returns>
+        </member>
+        <member name="T:DependencyVisualizer.Tracer">
+            <summary>
+            Tracer class
+            </summary>
+        </member>
+        <member name="F:DependencyVisualizer.Tracer.traceSwitch">
+            <summary>
+            The trace switch used
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.Tracer.Debug(System.String,System.Object[])">
+            <summary>
+            Output specified logMessage if allowed by app.config
+            </summary>
+            <param name="logMessage">The logMessage format.</param>
+            <param name="args">The parameters for the log message.</param>
+        </member>
+        <member name="M:DependencyVisualizer.Tracer.Info(System.String,System.Object[])">
+            <summary>
+            Output specified logMessage if allowed by app.config
+            </summary>
+            <param name="logMessage">The logMessage format.</param>
+            <param name="args">The parameters for the log message.</param>
+        </member>
+        <member name="M:DependencyVisualizer.Tracer.Warning(System.String,System.Object[])">
+            <summary>
+            Output specified logMessage if allowed by app.config
+            </summary>
+            <param name="logMessage">The logMessage format.</param>
+            <param name="args">The parameters for the log message.</param>
+        </member>
+        <member name="M:DependencyVisualizer.Tracer.Error(System.String,System.Object[])">
+            <summary>
+            Output specified logMessage if allowed by app.config
+            </summary>
+            <param name="logMessage">The logMessage format.</param>
+            <param name="args">The parameters for the log message.</param>
+        </member>
+        <member name="M:DependencyVisualizer.Tracer.Indent">
+            <summary>
+            Indents this instance.
+            </summary>
+        </member>
+        <member name="M:DependencyVisualizer.Tracer.Dedent">
+            <summary>
+            Dedents this instance.
+            </summary>
+        </member>
+    </members>
+</doc>
